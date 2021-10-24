@@ -1,6 +1,6 @@
-const namaKeluarga = ["ichika", "nino", "miku"];
+const namaKeluarga = ["ichika", "nino", "miku", "itsuki"];
 
-console.log(namaKeluarga);
+// console.log(namaKeluarga);
 
 // Looping with For
 // for (let index = 0; index < namaKeluarga.length; index++) {
@@ -16,13 +16,21 @@ console.log(namaKeluarga);
 //   index++;
 // }
 
+// console.log(
+//   namaKeluarga
+//     .filter(function (item) {
+//       return item == "ichika";
+//     })
+//     .map(function (item, index) {
+//       return `${item} adalah anak ke ${index + 1}`;
+//     })
+//     .join(", ")
+// );
+
 console.log(
-  namaKeluarga
-    .filter(function (item) {
-      return item == "ichika";
-    })
-    .map(function (item, index) {
-      return `${item} adalah anak ke ${index + 1}`;
-    })
-    .join(", ")
+  namaKeluarga.reduce(function (acc, item, index) {
+    acc[item] = `Anak ke ${index + 1}`;
+
+    return acc;
+  }, {})
 );
